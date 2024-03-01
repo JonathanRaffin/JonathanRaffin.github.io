@@ -64,19 +64,6 @@ $( document ).ready(function() {
 
   });
 
-  $('.cta2').click(function(){
-    console.log("CTA2 cliqué.");
-
-    var curActive = $('.side-nav').find('.is-active'),
-        curPos = $('.side-nav').children().index(curActive),
-        lastItem = $('.side-nav').children().length - 2,
-        nextPos = lastItem;
-
-    updateNavs(lastItem);
-    updateContent(curPos, nextPos, lastItem);
-
-  });
-
   // swipe support for touch devices
   var targetElement = document.getElementById('viewport'),
       mc = new Hammer(targetElement);
