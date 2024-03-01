@@ -52,8 +52,6 @@ $( document ).ready(function() {
   });
 
   $('.cta').click(function(){
-    console.log("CTA cliqué.");
-
     var curActive = $('.side-nav').find('.is-active'),
         curPos = $('.side-nav').children().index(curActive),
         lastItem = $('.side-nav').children().length - 1,
@@ -254,6 +252,84 @@ $( document ).ready(function() {
 
   }
 
+  function careerSlider() {
+
+    $('.career-slider--prev, .career-slider--next').click(function() {
+
+      var $this = $(this),
+          curLeft = $('.career-slider').find('.career-slider--item-left'),
+          curLeftPos = $('.career-slider').children().index(curLeft),
+          curCenter = $('.career-slider').find('.career-slider--item-center'),
+          curCenterPos = $('.career-slider').children().index(curCenter),
+          curRight = $('.career-slider').find('.career-slider--item-right'),
+          curRightPos = $('.career-slider').children().index(curRight),
+          totalWorks = $('.career-slider').children().length,
+          $left = $('.career-slider--item-left'),
+          $center = $('.career-slider--item-center'),
+          $right = $('.career-slider--item-right'),
+          $item = $('.career-slider--item');
+
+      $('.career-slider').animate({ opacity : 0 }, 400);
+
+      setTimeout(function(){
+
+      if ($this.hasClass('career-slider--next')) {
+        if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
+          $left.removeClass('career-slider--item-left').next().addClass('career-slider--item-left');
+          $center.removeClass('career-slider--item-center').next().addClass('career-slider--item-center');
+          $right.removeClass('career-slider--item-right').next().addClass('career-slider--item-right');
+        }
+        else {
+          if (curLeftPos === totalWorks - 1) {
+            $item.removeClass('career-slider--item-left').first().addClass('career-slider--item-left');
+            $center.removeClass('career-slider--item-center').next().addClass('career-slider--item-center');
+            $right.removeClass('career-slider--item-right').next().addClass('career-slider--item-right');
+          }
+          else if (curCenterPos === totalWorks - 1) {
+            $left.removeClass('career-slider--item-left').next().addClass('career-slider--item-left');
+            $item.removeClass('career-slider--item-center').first().addClass('career-slider--item-center');
+            $right.removeClass('career-slider--item-right').next().addClass('career-slider--item-right');
+          }
+          else {
+            $left.removeClass('career-slider--item-left').next().addClass('career-slider--item-left');
+            $center.removeClass('career-slider--item-center').next().addClass('career-slider--item-center');
+            $item.removeClass('career-slider--item-right').first().addClass('career-slider--item-right');
+          }
+        }
+      }
+      else {
+        if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
+          $left.removeClass('career-slider--item-left').prev().addClass('career-slider--item-left');
+          $center.removeClass('career-slider--item-center').prev().addClass('career-slider--item-center');
+          $right.removeClass('career-slider--item-right').prev().addClass('career-slider--item-right');
+        }
+        else {
+          if (curLeftPos === 0) {
+            $item.removeClass('career-slider--item-left').last().addClass('career-slider--item-left');
+            $center.removeClass('career-slider--item-center').prev().addClass('career-slider--item-center');
+            $right.removeClass('career-slider--item-right').prev().addClass('career-slider--item-right');
+          }
+          else if (curCenterPos === 0) {
+            $left.removeClass('career-slider--item-left').prev().addClass('career-slider--item-left');
+            $item.removeClass('career-slider--item-center').last().addClass('career-slider--item-center');
+            $right.removeClass('career-slider--item-right').prev().addClass('career-slider--item-right');
+          }
+          else {
+            $left.removeClass('career-slider--item-left').prev().addClass('career-slider--item-left');
+            $center.removeClass('career-slider--item-center').prev().addClass('career-slider--item-center');
+            $item.removeClass('career-slider--item-right').last().addClass('career-slider--item-right');
+          }
+        }
+      }
+
+    }, 400);
+
+    $('.career-slider').animate({ opacity : 1 }, 400);
+
+    });
+
+  }
+
   function transitionLabels() {
 
     $('.work-request--information input').focusout(function(){
@@ -276,6 +352,7 @@ $( document ).ready(function() {
 
   outerNav();
   workSlider();
+  careerSlider();
   transitionLabels();
 
 });
