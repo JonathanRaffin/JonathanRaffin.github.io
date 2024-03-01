@@ -52,10 +52,24 @@ $( document ).ready(function() {
   });
 
   $('.cta').click(function(){
+    console.log("CTA cliqué.");
 
     var curActive = $('.side-nav').find('.is-active'),
         curPos = $('.side-nav').children().index(curActive),
         lastItem = $('.side-nav').children().length - 1,
+        nextPos = lastItem;
+
+    updateNavs(lastItem);
+    updateContent(curPos, nextPos, lastItem);
+
+  });
+
+  $('.cta2').click(function(){
+    console.log("CTA2 cliqué.");
+
+    var curActive = $('.side-nav').find('.is-active'),
+        curPos = $('.side-nav').children().index(curActive),
+        lastItem = $('.side-nav').children().length - 2,
         nextPos = lastItem;
 
     updateNavs(lastItem);
