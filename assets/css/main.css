@@ -633,6 +633,10 @@ content:"04"}
 {
 content:"05"}
 
+.side-nav li:nth-child(6)::before
+{
+content:"06"}
+
 .side-nav li.is-active
 {
 	color:#0f33ff;
@@ -1388,6 +1392,75 @@ text-transform:uppercase}
 	text-decoration:none;
 	color:#fff;
 font-weight:700}
+
+
+.pro
+{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url("../img/Clavier.jpg");
+	background-position:center;
+	background-size:cover;
+background-repeat:no-repeat}
+
+.pro--lockup
+{
+	position:relative;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	width:900px;
+	max-width:75%;
+	height:100%;
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	-ms-flex-align:center;
+	align-items:center;
+	-webkit-box-pack:end;
+	-webkit-justify-content:flex-end;
+	-ms-flex-pack:end;
+	justify-content:center;
+margin:0 auto}
+
+@media (max-width: 1180px)
+{
+	.pro--lockup
+	{
+	max-width:90%}
+}
+
+@media (max-width: 767px)
+{
+	.pro--lockup
+	{
+		-webkit-box-pack:center;
+		-webkit-justify-content:center;
+		-ms-flex-pack:center;
+	justify-content:center}
+}
+
+.pro--lockup .pro--modal
+{
+	padding:45px 45px;
+	text-align:center;
+	background-color:#0c0c0c;
+box-shadow:0 0 30px 0 rgba(0,0,0,0.75)}
+
+.pro--lockup .pro--modal--information p,.pro--lockup .pro--modal--information a
+{
+	display:block;
+	margin:14px 0;
+	text-decoration:none;
+	color:#fff;
+font-weight:700}
+
+.pro--lockup .pro--modal--information p
+{
+margin-top:0}
 
 .hire
 {
