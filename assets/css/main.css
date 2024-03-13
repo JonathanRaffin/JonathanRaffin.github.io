@@ -1918,6 +1918,18 @@ opacity:1}
 	font-size:34px}
 }
 
+@media (max-width: 510px) 
+{
+	.outer-nav>li 
+	{
+	  font-size: 26px;}
+
+	.outer-nav>li::before
+	{
+		height: 10px;}
+}
+  
+
 .outer-nav li.is-vis:nth-child(2)
 {
 	-webkit-transition-delay:.04s;
