@@ -86,7 +86,7 @@ margin:0.67em 0}
 
 mark
 {
-	background:#ff0;
+	background:#5D76FF;
 color:#000}
 
 small
@@ -214,15 +214,15 @@ padding:0}
 
 ::-moz-selection
 {
-background:#FFF498}
+background:#5D76FF}
 
 ::selection
 {
-background:#FFF498}
+background:#5D76FF}
 
 ::-moz-selection
 {
-background:#FFF498}
+background:#5D76FF}
 
 img::-moz-selection
 {
@@ -238,7 +238,7 @@ background:transparent}
 
 body
 {
--webkit-tap-highlight-color:#FFF498}
+-webkit-tap-highlight-color:#5D76FF}
 
 body
 {
