@@ -1281,17 +1281,13 @@ transition:bottom .2s ease-in-out,left .2s ease-in-out}
 		top:205px;
 	left:205px}
 
-	/* .about--banner img
-	{
-	display:none} */
-
 	.about--banner img 
 	{
 		display: block;
-		top: 300px;
+		top: 325px;
 		left: auto;
 		right: auto;
-		content: url("../img/Prog_small.png")}
+	content: url("../img/Prog_small.png")}
 
 	.about--options
 	{
